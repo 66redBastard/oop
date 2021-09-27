@@ -1,3 +1,4 @@
+// Classes serve as templates to create new objects
 class Rectangle {
   private _width: number;
   private _height: number;
