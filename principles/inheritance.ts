@@ -48,6 +48,19 @@ class Employee extends Person {
     this._email = email;
     this._phone = phone;
   }
+
+  public get getEmail(): string {
+    return this._email;
+  }
+  public set setEmail(value: string) {
+    this._email = value;
+  }
+  public get getPhone(): string {
+    return this._phone;
+  }
+  public set setPhone(value: string) {
+    this._phone = value;
+  }
 }
 
 const employee1 = new Employee(
