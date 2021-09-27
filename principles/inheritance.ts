@@ -8,6 +8,9 @@ class Person {
     this._lastName = lastName;
     this._age = age;
   }
+  public get getFullName(): string {
+    return `full name - ${this._firstName} ${this._lastName}`;
+  }
 
   public get getFirstName(): string {
     return this._firstName;
@@ -63,11 +66,41 @@ class Employee extends Person {
   }
 }
 
-const employee1 = new Employee(
+const employee = new Employee(
   "Ivan",
   "Ivanich",
   420,
   "gg@gmail.com",
   "+4206667777"
 );
-console.log(employee1);
+console.log(employee);
+
+class Developer extends Employee {
+  private _level: string;
+  private _stack: string;
+
+  constructor(
+    firstName: string,
+    lastName: string,
+    age: number,
+    email: string,
+    phone: string,
+    level: string,
+    stack: string
+  ) {
+    super(firstName, lastName, age, email, phone);
+    this._level = level;
+    this._stack = stack;
+  }
+}
+
+const developer = new Developer(
+  "Gerbert",
+  "Shieldt",
+  420,
+  "gg69@gmail.com",
+  "+4206669999",
+  "jun",
+  "js"
+);
+console.log(developer.getFullName);
